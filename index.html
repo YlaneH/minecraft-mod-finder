@@ -6,6 +6,15 @@
   <title>Minecraft Finder — Trouve ton modpack idéal</title>
   <meta name="description" content="Trouve le modpack Minecraft parfait selon tes envies. Quiz personnalisé, filtres avancés, top 10 des modpacks les plus populaires.">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQ6ZBGLJ9Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FQ6ZBGLJ9Y');
+  </script>
 </head>
 <body>
 
@@ -193,7 +202,7 @@
     <div id="detail-content"></div>
   </div>
 
-  <!-- MODALES FOOTER -->
+  <!-- MODALES -->
   <div id="modal-overlay" class="modal-overlay hidden" onclick="closeModal()">
     <div class="modal-box" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal()">✕</button>
