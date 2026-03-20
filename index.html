@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Finder — Trouve ton modpack idéal</title>
+  <meta name="description" content="Trouve le modpack Minecraft parfait selon tes envies. Quiz personnalisé, filtres avancés, top 10 des modpacks les plus populaires.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="tabs">
+    <button class="tab-btn active" onclick="switchTab('quiz')">✦ Accueil</button>
+    <button class="tab-btn" onclick="switchTab('top10')">🏆 Top 10</button>
+    <button class="tab-btn" onclick="switchTab('modpacks')">Modpacks</button>
+    <button class="tab-btn" onclick="switchTab('mods')">Mods</button>
+    <button class="tab-btn" onclick="switchTab('guides')">📖 Guides</button>
+  </nav>
+
+  <header>
+    <h1>Minecraft Finder</h1>
+    <p id="subtitle">Trouve le modpack ou mod qu'il te faut</p>
+    <div class="ornament"><span>✦</span></div>
+  </header>
+
+  <div id="app">
+
+    <!-- ONGLET ACCUEIL -->
+    <div id="tab-quiz" class="tab-content active">
+      <section class="quiz-section">
+        <h2 class="section-title">Trouve ton modpack idéal</h2>
+        <p class="section-subtitle">Réponds à 4 questions, on s'occupe du reste</p>
+        <div id="quiz"></div>
+        <div id="results"></div>
+      </section>
+    </div>
+
+    <!-- ONGLET TOP 10 -->
+    <div id="tab-top10" class="tab-content">
+      <section class="top10-section">
+        <h2 class="section-title">Top 10 des modpacks</h2>
+        <p class="section-subtitle">Les plus téléchargés du moment</p>
+        <div id="top10-grid" class="top10-grid"></div>
+      </section>
+    </div>
+
+    <!-- ONGLET MODPACKS -->
+    <div id="tab-modpacks" class="tab-content">
+      <div class="filters">
+        <div class="filter-group">
+          <button class="filter-toggle" onclick="toggleFilter('filter-cat-modpack')"><span>Catégorie</span><span class="chevron">▼</span></button>
+          <div id="filter-cat-modpack" class="filter-options hidden">
+            <button class="filter-chip active" onclick="setFilter('modpack','category','',this)">Tous</button>
+            <button class="filter-chip" onclick="setFilter('modpack','category','adventure',this)">Aventure</button>
+            <button class="filter-chip" onclick="setFilter('modpack','category','combat',this)">Combat</button>
+            <button class="filter-chip" onclick="setFilter('modpack','category','magic',this)">Magie</button>
+            <button class="filter-chip" onclick="setFilter('modpack','category','technology',this)">Technologie</button>
+            <button class="filter-chip" onclick="setFilter('modpack','category','quests',this)">Quêtes</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="filter-toggle" onclick="toggleFilter('filter-version-modpack')"><span>Version Minecraft</span><span class="chevron">▼</span></button>
+          <div id="filter-version-modpack" class="filter-options hidden">
+            <button class="filter-chip active" onclick="setFilter('modpack','version','',this)">Toutes</button>
+            <button class="filter-chip" onclick="setFilter('modpack','version','1.21.1',this)">1.21.1</button>
+            <button class="filter-chip" onclick="setFilter('modpack','version','1.21',this)">1.21</button>
+            <button class="filter-chip" onclick="setFilter('modpack','version','1.20.1',this)">1.20.1</button>
+            <button class="filter-chip" onclick="setFilter('modpack','version','1.19.2',this)">1.19.2</button>
+            <button class="filter-chip" onclick="setFilter('modpack','version','1.18.2',this)">1.18.2</button>
+            <button class="filter-chip" onclick="setFilter('modpack','version','1.16.5',this)">1.16.5</button>
+            <button class="filter-chip" onclick="setFilter('modpack','version','1.12.2',this)">1.12.2</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="filter-toggle" onclick="toggleFilter('filter-sort-modpack')"><span>Trier par</span><span class="chevron">▼</span></button>
+          <div id="filter-sort-modpack" class="filter-options hidden">
+            <button class="filter-chip active" onclick="setFilter('modpack','sort','relevance',this)">Pertinence</button>
+            <button class="filter-chip" onclick="setFilter('modpack','sort','downloads',this)">Plus téléchargés</button>
+            <button class="filter-chip" onclick="setFilter('modpack','sort','follows',this)">Plus suivis</button>
+            <button class="filter-chip" onclick="setFilter('modpack','sort','newest',this)">Plus récents</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="filter-toggle" onclick="toggleFilter('filter-players-modpack')"><span>Joueurs</span><span class="chevron">▼</span></button>
+          <div id="filter-players-modpack" class="filter-options hidden">
+            <button class="filter-chip active" onclick="setFilter('modpack','players','',this)">Tous</button>
+            <button class="filter-chip" onclick="setFilter('modpack','players','multiplayer',this)">Multijoueur</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="filter-toggle" onclick="toggleFilter('filter-diff-modpack')"><span>Difficulté</span><span class="chevron">▼</span></button>
+          <div id="filter-diff-modpack" class="filter-options hidden">
+            <button class="filter-chip active" onclick="setFilter('modpack','difficulty','',this)">Toutes</button>
+            <button class="filter-chip" onclick="setFilter('modpack','difficulty','lightweight',this)">Casual</button>
+            <button class="filter-chip" onclick="setFilter('modpack','difficulty','challenging',this)">Difficile</button>
+            <button class="filter-chip" onclick="setFilter('modpack','difficulty','hardcore',this)">Hardcore</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="filter-toggle" onclick="toggleFilter('filter-loader-modpack')"><span>Mod loader</span><span class="chevron">▼</span></button>
+          <div id="filter-loader-modpack" class="filter-options hidden">
+            <button class="filter-chip active" onclick="setFilter('modpack','loader','',this)">Tous</button>
+            <button class="filter-chip" onclick="setFilter('modpack','loader','forge',this)">Forge</button>
+            <button class="filter-chip" onclick="setFilter('modpack','loader','fabric',this)">Fabric</button>
+            <button class="filter-chip" onclick="setFilter('modpack','loader','quilt',this)">Quilt</button>
+            <button class="filter-chip" onclick="setFilter('modpack','loader','neoforge',this)">NeoForge</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="filter-toggle" onclick="toggleFilter('filter-modin-modpack')"><span>Contient un mod</span><span class="chevron">▼</span></button>
+          <div id="filter-modin-modpack" class="filter-options hidden">
+            <input type="text" id="search-mod-in-modpack" placeholder="Ex: JEI, Tinkers, Botania..." oninput="debounceModInSearch()">
+            <p class="filter-hint">Recherche les modpacks contenant ce mod</p>
+          </div>
+        </div>
+        <div class="search-bar">
+          <input type="text" id="search-modpack" placeholder="Rechercher un modpack..." oninput="debounceSearch('modpack')">
+        </div>
+      </div>
+      <div id="results-modpack" class="results-grid"></div>
+      <button class="load-more" onclick="loadMore('modpack')">Charger plus</button>
+    </div>
+
+    <!-- ONGLET MODS -->
+    <div id="tab-mods" class="tab-content">
+      <div class="filters">
+        <div class="filter-group">
+          <button class="filter-toggle" onclick="toggleFilter('filter-cat-mod')"><span>Catégorie</span><span class="chevron">▼</span></button>
+          <div id="filter-cat-mod" class="filter-options hidden">
+            <button class="filter-chip active" onclick="setFilter('mod','category','',this)">Tous</button>
+            <button class="filter-chip" onclick="setFilter('mod','category','adventure',this)">Aventure</button>
+            <button class="filter-chip" onclick="setFilter('mod','category','combat',this)">Combat</button>
+            <button class="filter-chip" onclick="setFilter('mod','category','magic',this)">Magie</button>
+            <button class="filter-chip" onclick="setFilter('mod','category','technology',this)">Technologie</button>
+            <button class="filter-chip" onclick="setFilter('mod','category','decoration',this)">Décoration</button>
+            <button class="filter-chip" onclick="setFilter('mod','category','storage',this)">Stockage</button>
+            <button class="filter-chip" onclick="setFilter('mod','category','utility',this)">Utilitaire</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="filter-toggle" onclick="toggleFilter('filter-version-mod')"><span>Version Minecraft</span><span class="chevron">▼</span></button>
+          <div id="filter-version-mod" class="filter-options hidden">
+            <button class="filter-chip active" onclick="setFilter('mod','version','',this)">Toutes</button>
+            <button class="filter-chip" onclick="setFilter('mod','version','1.21.1',this)">1.21.1</button>
+            <button class="filter-chip" onclick="setFilter('mod','version','1.21',this)">1.21</button>
+            <button class="filter-chip" onclick="setFilter('mod','version','1.20.1',this)">1.20.1</button>
+            <button class="filter-chip" onclick="setFilter('mod','version','1.19.2',this)">1.19.2</button>
+            <button class="filter-chip" onclick="setFilter('mod','version','1.18.2',this)">1.18.2</button>
+            <button class="filter-chip" onclick="setFilter('mod','version','1.16.5',this)">1.16.5</button>
+            <button class="filter-chip" onclick="setFilter('mod','version','1.12.2',this)">1.12.2</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="filter-toggle" onclick="toggleFilter('filter-sort-mod')"><span>Trier par</span><span class="chevron">▼</span></button>
+          <div id="filter-sort-mod" class="filter-options hidden">
+            <button class="filter-chip active" onclick="setFilter('mod','sort','relevance',this)">Pertinence</button>
+            <button class="filter-chip" onclick="setFilter('mod','sort','downloads',this)">Plus téléchargés</button>
+            <button class="filter-chip" onclick="setFilter('mod','sort','follows',this)">Plus suivis</button>
+            <button class="filter-chip" onclick="setFilter('mod','sort','newest',this)">Plus récents</button>
+          </div>
+        </div>
+        <div class="filter-group">
+          <button class="filter-toggle" onclick="toggleFilter('filter-loader-mod')"><span>Mod loader</span><span class="chevron">▼</span></button>
+          <div id="filter-loader-mod" class="filter-options hidden">
+            <button class="filter-chip active" onclick="setFilter('mod','loader','',this)">Tous</button>
+            <button class="filter-chip" onclick="setFilter('mod','loader','forge',this)">Forge</button>
+            <button class="filter-chip" onclick="setFilter('mod','loader','fabric',this)">Fabric</button>
+            <button class="filter-chip" onclick="setFilter('mod','loader','quilt',this)">Quilt</button>
+            <button class="filter-chip" onclick="setFilter('mod','loader','neoforge',this)">NeoForge</button>
+          </div>
+        </div>
+        <div class="search-bar">
+          <input type="text" id="search-mod" placeholder="Rechercher un mod..." oninput="debounceSearch('mod')">
+        </div>
+      </div>
+      <div id="results-mod" class="results-grid"></div>
+      <button class="load-more" onclick="loadMore('mod')">Charger plus</button>
+    </div>
+
+    <!-- ONGLET GUIDES -->
+    <div id="tab-guides" class="tab-content">
+      <section class="guides-section">
+        <h2 class="section-title">Guides & Conseils</h2>
+        <p class="section-subtitle">Tout ce qu'il faut savoir avant de lancer un modpack</p>
+        <div class="guides-grid" id="guides-grid"></div>
+      </section>
+    </div>
+
+  </div>
+
+  <!-- PAGE DÉTAIL -->
+  <div id="detail-page" class="detail-hidden">
+    <div id="detail-content"></div>
+  </div>
+
+  <!-- MODALES FOOTER -->
+  <div id="modal-overlay" class="modal-overlay hidden" onclick="closeModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <button class="footer-link-btn" onclick="openAbout()">À propos</button>
+      <span class="footer-sep">·</span>
+      <button class="footer-link-btn" onclick="openPrivacy()">Politique de confidentialité</button>
+      <span class="footer-sep">·</span>
+      <button class="footer-link-btn" onclick="openLegal()">Mentions légales</button>
+    </div>
+    <p>Données fournies par <a href="https://modrinth.com" target="_blank">Modrinth</a> — tous droits réservés aux créateurs de mods.</p>
+    <p>Ce site n'est pas affilié à Modrinth ou Mojang.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
