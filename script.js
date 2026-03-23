@@ -164,96 +164,97 @@ const guidesData = [
   {
     emoji: '🚀',
     titre: 'Par où commencer avec les modpacks ?',
-    resume: 'Tu découvres les modpacks ? Voici les bases pour bien démarrer sans te perdre.',
+    resume: 'Moi je galérais à choisir. Voilà une mini méthode simple pour démarrer vite (et éviter de te perdre).',
     contenu: `
       <h3>Par où commencer avec les modpacks ?</h3>
-      <p>Un modpack, c'est une collection de mods déjà configurés et compatibles entre eux. Au lieu d'installer 50 mods à la main, tu lances un seul pack et tout est prêt.</p>
+      <p>Un modpack, c'est une collection de mods déjà configurés et compatibles entre eux. Plutôt que d'installer 50 trucs à la main, tu lances un seul pack et ça roule.</p>
+      <p><strong>Le plus important :</strong> au lieu de passer des heures à scroller, je te conseille de suivre ce mini-ordre (simple, mais efficace).</p>
       <h4>Les étapes pour démarrer :</h4>
-      <p><strong>1. Installe un launcher</strong> — <a href="https://modrinth.com/app" target="_blank">Modrinth App</a> ou CurseForge sont les deux plus populaires. Ils gèrent tout automatiquement.</p>
-      <p><strong>2. Choisis ton modpack</strong> — Utilise le quiz sur l'accueil pour trouver celui qui correspond à ton style de jeu.</p>
-      <p><strong>3. Alloue assez de RAM</strong> — La plupart des modpacks ont besoin d'au moins 4 Go de RAM, certains jusqu'à 8 Go. Règle ça dans les paramètres de ton launcher.</p>
-      <p><strong>4. Lance et attends</strong> — Le premier démarrage prend du temps, c'est normal. Les mods se chargent tous au lancement.</p>
-      <p><strong>Conseil :</strong> commence par un modpack léger comme <em>Vault Hunters</em> ou <em>All the Mods</em> pour t'habituer avant de passer aux packs plus lourds.</p>
+      <p><strong>1. Installe un launcher</strong> — <a href="https://modrinth.com/app" target="_blank">Modrinth App</a> ou CurseForge. Ils font le boulot automatiquement.</p>
+      <p><strong>2. Choisis ton modpack</strong> — Utilise le quiz sur l'accueil : en 2 minutes tu te retrouves avec des recommandations qui collent vraiment à ton style.</p>
+      <p><strong>3. Alloue assez de RAM</strong> — Vise au moins 4 Go (souvent plus selon le pack). Si ça rame au premier chargement, c'est souvent de la RAM.</p>
+      <p><strong>4. Lance et attends</strong> — Première fois = normal que ça prenne un peu. Après, c'est plus fluide.</p>
+      <p><strong>Conseil perso :</strong> commence léger (ex : <em>Vault Hunters</em> ou <em>All the Mods</em>), puis tu montes en difficulté quand tu es à l'aise.</p>
     `
   },
   {
     emoji: '💻',
     titre: 'Quel PC pour les modpacks ?',
-    resume: 'Forge, Fabric, peu de RAM... on t\'explique ce dont tu as vraiment besoin.',
+    resume: 'Si ton jeu rame, c’est souvent pas “ton talent”, c’est juste la config. Voilà quoi regarder.',
     contenu: `
       <h3>Quel PC pour les modpacks ?</h3>
-      <p>Les modpacks sont beaucoup plus gourmands que le Minecraft vanilla. Voici ce qu'il te faut selon le type de pack :</p>
-      <h4>Modpacks légers (Casual)</h4>
-      <p>4 Go de RAM allouée, n'importe quel PC de moins de 10 ans. Exemples : <em>Better MC</em>, <em>Prominence</em>.</p>
-      <h4>Modpacks moyens</h4>
-      <p>6-8 Go de RAM allouée, un processeur correct (i5 ou Ryzen 5). Exemples : <em>All the Mods 9</em>, <em>Enigmatica 6</em>.</p>
-      <h4>Modpacks lourds</h4>
-      <p>8-12 Go de RAM allouée, bon CPU et GPU. Exemples : <em>SkyFactory 4</em>, <em>FTB Revelation</em>.</p>
-      <h4>Astuces pour améliorer les performances :</h4>
-      <p>Installe les mods <strong>Sodium</strong> (Fabric) ou <strong>OptiFine</strong> (Forge) si le pack le permet. Baisse la distance de rendu à 8-10 chunks.</p>
+      <p>Les modpacks coûtent beaucoup plus cher que le vanilla. La bonne nouvelle, c’est que ça se règle assez facilement.</p>
+      <h4>Le repère le plus simple : la RAM</h4>
+      <p><strong>• Casual (léger)</strong> : commence vers <strong>4 Go</strong>. Si ton PC date un peu, ça passe souvent quand même.</p>
+      <p><strong>• Moyen</strong> : vise <strong>6-8 Go</strong> et un CPU correct (un i5/Ryzen 5 ça aide bien).</p>
+      <p><strong>• Lourd</strong> : <strong>8-12 Go</strong> et un bon processeur. Souvent, c’est là que le “je rame” apparaît.</p>
+      <h4>Si ça rame : 3 trucs rapides</h4>
+      <p><strong>1)</strong> baisse un peu la distance de rendu (par exemple <strong>8-10 chunks</strong>).</p>
+      <p><strong>2)</strong> active des optimisations si le pack les accepte (genre <strong>Sodium</strong> si c’est Fabric, ou des options type <strong>OptiFine</strong> côté Forge selon les packs).</p>
+      <p><strong>3)</strong> surveille ton utilisation RAM : si ça sature, ça peut planter.</p>
     `
   },
   {
     emoji: '⚔️',
     titre: 'Top 5 modpacks pour débuter en 2025',
-    resume: 'Les meilleurs modpacks pour les nouveaux joueurs, testés et approuvés.',
+    resume: 'Si je devais en recommander 5 à quelqu'un qui veut juste démarrer sans se prendre la tête.',
     contenu: `
       <h3>Top 5 modpacks pour débuter en 2025</h3>
-      <p>Tu ne sais pas quel modpack choisir ? Voici notre sélection pour les débutants :</p>
+      <p>Tu bloques parce que tu sais pas quoi prendre ? Voilà une sélection pensée pour démarrer proprement :</p>
       <p><strong>1. Better MC</strong> — Ajoute plein de contenu sans changer le gameplay de base. Parfait pour une première expérience moddée.</p>
       <p><strong>2. Prominence II</strong> — Aventure et exploration, très accessible. Un des modpacks les mieux notés du moment.</p>
       <p><strong>3. All the Mods 9</strong> — La référence pour découvrir la technologie et la magie. Énorme mais bien guidé.</p>
       <p><strong>4. RLCraft</strong> — Si tu veux du challenge dès le départ. Survie hardcore, mais très populaire.</p>
       <p><strong>5. Vault Hunters</strong> — Un modpack de quêtes avec une progression claire. Idéal pour jouer en multi.</p>
-      <p>Utilise notre <strong>quiz sur l'accueil</strong> pour obtenir une recommandation personnalisée !</p>
+      <p>Et si tu veux aller plus vite que “au hasard” : utilise le <strong>quiz sur l'accueil</strong> pour avoir une recommandation qui te ressemble.</p>
     `
   },
   {
     emoji: '🔧',
     titre: 'Forge vs Fabric vs NeoForge : quelles différences ?',
-    resume: 'Tu ne sais pas quel mod loader choisir ? On t\'explique tout en 2 minutes.',
+    resume: 'Le vrai choix, c’est pas “toi vs le loader”. C’est surtout compatibilité avec le modpack.',
     contenu: `
       <h3>Forge vs Fabric vs NeoForge</h3>
-      <p>Le mod loader, c'est le moteur qui fait tourner les mods. Chaque modpack en utilise un spécifique, tu ne peux pas les mélanger.</p>
+      <p>Le mod loader, c’est le “moteur” qui fait tourner les mods. Et surtout : <strong>chaque modpack est prévu pour un loader</strong>. Donc tu ne mélanges pas au hasard.</p>
       <h4>Forge</h4>
-      <p>Le plus ancien et le plus répandu. La majorité des gros modpacks utilisent Forge. Très stable, énorme bibliothèque de mods. Inconvénient : plus lent au chargement.</p>
+      <p>Très répandu, et souvent utilisé sur les gros packs. C’est généralement solide, mais ça peut être un peu plus lourd au chargement.</p>
       <h4>Fabric</h4>
-      <p>Plus léger et plus rapide que Forge. Populaire pour les mods de performance et les modpacks axés survie.</p>
+      <p>Souvent plus léger et plus “rapide”. Tu le vois beaucoup sur des packs orientés perf/survie, et sur plein d’optimisations.</p>
       <h4>NeoForge</h4>
-      <p>Un fork de Forge créé en 2023. Compatible avec beaucoup de mods Forge, et plus actif dans le développement.</p>
-      <p><strong>Conseil :</strong> ne te prends pas la tête, le launcher installe automatiquement le bon mod loader pour chaque modpack.</p>
+      <p>Un cousin de Forge, plus moderne. En pratique : si le modpack le demande, tu utilises NeoForge et c’est réglé.</p>
+      <p><strong>Conseil :</strong> le plus simple, c’est de choisir le modpack. Ensuite, ton launcher installe le bon loader automatiquement.</p>
     `
   },
   {
     emoji: '🌍',
     titre: 'Jouer en multijoueur : guide complet',
-    resume: 'Comment jouer avec des amis sur un modpack, gratuitement ou avec un serveur dédié.',
+    resume: 'Le multijoueur c’est fun, mais faut juste éviter les “problèmes de version”. Voilà comment.',
     contenu: `
       <h3>Jouer en multijoueur sur un modpack</h3>
-      <p>Jouer à un modpack avec des amis, c'est souvent l'expérience la plus fun. Voici comment faire.</p>
+      <p>Honnêtement, c’est souvent là que tu t’amuses le plus. Le seul piège : ne pas avoir la même version (sinon ça bug).</p>
       <h4>Option 1 : LAN (réseau local)</h4>
-      <p>Si vous êtes sur le même réseau Wi-Fi, un joueur héberge la partie depuis le jeu. Gratuit, mais vous devez être au même endroit.</p>
+      <p>Si tu es sur le même Wi‑Fi qu’un pote, le plus simple c’est que quelqu’un héberge depuis le jeu. C’est gratuit, mais il faut être “au même endroit”.</p>
       <h4>Option 2 : Aternos (gratuit)</h4>
-      <p><a href="https://aternos.org" target="_blank">Aternos</a> propose des serveurs Minecraft gratuits avec support modpacks. Le serveur se met en veille quand personne ne joue.</p>
+      <p><a href="https://aternos.org" target="_blank">Aternos</a> peut te dépanner si tu veux un serveur gratuit avec des modpacks. Par contre, le serveur peut se mettre en veille.</p>
       <h4>Option 3 : Serveur payant</h4>
-      <p>Pour une expérience stable, un hébergeur comme Bisect Hosting ou PebbleHost à partir de 3-5€/mois.</p>
-      <p><strong>Important :</strong> tous les joueurs doivent avoir exactement la même version du modpack.</p>
+      <p>Si tu veux quelque chose de stable 24/7, un hébergeur payant (type Bisect Hosting ou PebbleHost) peut être le plus confortable.</p>
+      <p><strong>Important :</strong> tout le monde doit lancer <strong>le même modpack</strong> et idéalement la même version. Sinon, tu vas perdre du temps.</p>
     `
   },
   {
     emoji: '📦',
     titre: 'Comment installer un modpack étape par étape',
-    resume: 'Guide pas à pas pour installer ton premier modpack avec Modrinth App.',
+    resume: 'Si c’est ton premier modpack : suis ça, et tu devrais y arriver sans galérer.',
     contenu: `
       <h3>Installer un modpack étape par étape</h3>
-      <p>Voici comment installer n'importe quel modpack avec <strong>Modrinth App</strong> :</p>
-      <p><strong>Étape 1 :</strong> Télécharge <a href="https://modrinth.com/app" target="_blank">Modrinth App</a> sur le site officiel.</p>
-      <p><strong>Étape 2 :</strong> Connecte-toi avec ton compte Microsoft.</p>
-      <p><strong>Étape 3 :</strong> Dans l'onglet "Browse", cherche le modpack ou utilise notre quiz.</p>
-      <p><strong>Étape 4 :</strong> Clique sur "Install". Le launcher télécharge tout automatiquement.</p>
-      <p><strong>Étape 5 :</strong> Alloue au moins 4-6 Go de RAM dans les paramètres de l'instance.</p>
-      <p><strong>Étape 6 :</strong> Lance le jeu, le premier démarrage peut prendre 2-5 minutes.</p>
-      <p><strong>Astuce :</strong> Si ça crashe au démarrage, c'est souvent un problème de RAM.</p>
+      <p>Je te montre le chemin le plus simple avec <strong>Modrinth App</strong> :</p>
+      <p><strong>Étape 1 :</strong> télécharge <a href="https://modrinth.com/app" target="_blank">Modrinth App</a> (site officiel).</p>
+      <p><strong>Étape 2 :</strong> connecte-toi avec ton compte Microsoft.</p>
+      <p><strong>Étape 3 :</strong> ouvre <strong>Browse</strong>, cherche ton modpack (ou utilise le quiz ici sur la page d’accueil).</p>
+      <p><strong>Étape 4 :</strong> clique sur <strong>Install</strong> : le launcher récupère tout automatiquement.</p>
+      <p><strong>Étape 5 :</strong> dans les paramètres de l’instance, mets au moins <strong>4-6 Go</strong> de RAM (ajuste si besoin).</p>
+      <p><strong>Étape 6 :</strong> lance le jeu. La première fois, ça peut prendre quelques minutes.</p>
+      <p><strong>Astuce :</strong> si ça crash, la cause la plus fréquente c’est la RAM (ou un problème de compatibilité du pack).</p>
     `
   }
 ]
@@ -290,11 +291,11 @@ function openGuide(i) {
 function openAbout() {
   document.getElementById('modal-content').innerHTML = `
     <h3>À propos de Minecraft Finder</h3>
-    <p>Minecraft Finder est un outil gratuit pour aider les joueurs à trouver le modpack ou mod Minecraft qui leur correspond.</p>
-    <p>Face aux milliers de modpacks disponibles sur Modrinth, c'est pas toujours facile de choisir. Le quiz, les filtres et le top 10 sont là pour simplifier ça.</p>
+    <p>Je m'appelle <strong>Gurin</strong>. Comme beaucoup de joueurs, je passe facilement plus de temps à chercher “LE” modpack qu'à réellement jouer.</p>
+    <p>Du coup j'ai créé <strong>Minecraft Finder</strong> : un petit outil qui te fait gagner du temps. Tu réponds à quelques questions, et je te pousse vers des modpacks (ou mods) qui correspondent à ton style.</p>
+    <p>Le site utilise un quiz, des filtres, et un <strong>Top 10</strong> pour que tu puisses découvrir rapidement. Pas de blabla : juste l'idée de base, trouver vite et tester.</p>
     <p>Les données viennent de l'API publique de <a href="https://modrinth.com" target="_blank">Modrinth</a>.</p>
-    <p>Site créé par un passionné de Minecraft, pour la communauté.</p>
-    <p><strong>Contact :</strong> une question ? Retrouvez-nous sur les réseaux.</p>
+    <p><strong>Si tu veux</strong> : dis-moi en commentaire ce que tu voudrais améliorer (plus de filtres, meilleurs guides, une nouvelle section, etc.).</p>
   `
   document.getElementById('modal-overlay').classList.remove('hidden')
 }
@@ -302,16 +303,17 @@ function openAbout() {
 function openPrivacy() {
   document.getElementById('modal-content').innerHTML = `
     <h3>Politique de confidentialité</h3>
-    <p><em>Dernière mise à jour : mars 2025</em></p>
-    <p>Minecraft Finder respecte votre vie privée.</p>
-    <h4>Données collectées</h4>
-    <p>Ce site ne collecte aucune donnée personnelle directement. C'est un outil statique qui appelle l'API publique de Modrinth.</p>
-    <h4>Cookies</h4>
-    <p>Des cookies techniques peuvent être utilisés. Si des pubs sont affichées via Google AdSense, des cookies tiers peuvent être déposés par Google. Vous pouvez les gérer dans les paramètres de votre navigateur.</p>
-    <h4>Google AdSense</h4>
-    <p>Ce site peut afficher des publicités via Google AdSense. Pour en savoir plus : <a href="https://policies.google.com/privacy" target="_blank">politique de confidentialité de Google</a>.</p>
+    <p><em>Dernière mise à jour : mars 2026</em></p>
+    <p>Je fais au plus simple : ce site ne te demande pas de compte et je ne récupère pas d'infos personnelles “en mode formulaire”.</p>
+    <h4>Données utilisées pour faire tourner le site</h4>
+    <p>Le site affiche les modpacks/mods via l'API publique de <a href="https://modrinth.com" target="_blank">Modrinth</a>.</p>
+    <h4>Statistiques de visites (Google Analytics)</h4>
+    <p>Le site utilise Google Analytics (via le script présent dans la page) pour comprendre comment les gens utilisent l'outil et améliorer l'expérience. Les données sont traitées par Google.</p>
+    <h4>Cookies et publicités</h4>
+    <p>Des cookies techniques peuvent être utilisés. Quand tu verras des publicités, elles peuvent être diffusées via <strong>Google AdSense</strong> (et donc via des partenaires publicitaires de Google).</p>
+    <p>Dans ce cas, Google peut utiliser des cookies pour afficher des annonces et mesurer leurs performances. Tu peux gérer ça via les paramètres de ton navigateur et aussi via les <a href="https://support.google.com/ads/answer/7395996" target="_blank" rel="noopener noreferrer">paramètres des annonces Google</a>.</p>
     <h4>Vos droits</h4>
-    <p>Conformément au RGPD, vous disposez d'un droit d'accès et de suppression de vos données. Contactez-nous pour ça.</p>
+    <p>Conformément au RGPD, tu peux demander l'accès ou la suppression des données te concernant quand elles existent. Si tu as une question, écris-moi.</p>
   `
   document.getElementById('modal-overlay').classList.remove('hidden')
 }
@@ -319,13 +321,13 @@ function openPrivacy() {
 function openLegal() {
   document.getElementById('modal-content').innerHTML = `
     <h3>Mentions légales</h3>
-    <p><em>Dernière mise à jour : mars 2025</em></p>
+    <p><em>Dernière mise à jour : mars 2026</em></p>
     <h4>Éditeur</h4>
-    <p>Minecraft Finder est un site personnel non commercial.</p>
+    <p>Minecraft Finder est un site personnel tenu par <strong>Gurin</strong>.</p>
     <h4>Hébergement</h4>
     <p>Hébergé par Vercel Inc., 340 Pine Street Suite 701, San Francisco, California 94104, USA.</p>
     <h4>Propriété intellectuelle</h4>
-    <p>Le contenu du site (quiz, guides) appartient à l'éditeur. Les données modpacks viennent de l'API Modrinth et appartiennent à leurs créateurs.</p>
+    <p>Le contenu du site (quiz, guides) appartient à Gurin. Les données modpacks/mods viennent de l'API Modrinth et appartiennent à leurs créateurs.</p>
     <h4>Non-affiliation</h4>
     <p>Ce site n'est pas affilié à Mojang Studios, Microsoft, Modrinth ou CurseForge. "Minecraft" est une marque déposée de Mojang.</p>
   `
@@ -482,10 +484,11 @@ async function openDetail(item, type) {
 
   content.innerHTML = `
     <div class="detail-inner">
-      <button class="detail-back" onclick="closeDetail()">← Retour</button>
+      <button type="button" class="detail-back">← Retour</button>
       <p class="loading">Chargement...</p>
     </div>
   `
+  content.querySelector('.detail-back').addEventListener('click', closeDetail)
 
   let fullDesc = item.description
   try {
@@ -509,7 +512,7 @@ async function openDetail(item, type) {
 
   content.innerHTML = `
     <div class="detail-inner">
-      <button class="detail-back" onclick="closeDetail()">← Retour</button>
+      <button type="button" class="detail-back">← Retour</button>
       <div class="detail-hero">
         <img src="${item.icon_url || 'https://via.placeholder.com/96?text=MC'}" alt="${item.title}">
         <div class="detail-hero-info">
@@ -557,10 +560,13 @@ async function openDetail(item, type) {
       <div class="detail-description">${formatDescription(fullDesc)}</div>
       <div class="detail-actions">
         <a href="${modrinthUrl}" target="_blank" class="detail-cta">Voir sur Modrinth →</a>
-        <button class="detail-share" onclick="partagerModpack('${item.slug}', '${item.title.replace(/'/g, "\\'")}')">Partager</button>
+        <button type="button" class="detail-share">Partager</button>
       </div>
     </div>
   `
+  content.querySelector('.detail-back').addEventListener('click', closeDetail)
+  const shareBtn = content.querySelector('.detail-share')
+  shareBtn.addEventListener('click', () => partagerModpack(item.slug, item.title))
 }
 
 function closeDetail() {
@@ -644,11 +650,16 @@ function renderQuestion() {
     <div class="question">
       <p class="question-text">${q.question}</p>
       <div class="options">
-        ${q.options.map(opt => `<button class="option-btn" onclick="selectAnswer('${q.id}', '${opt.value}')">${opt.label}</button>`).join('')}
+        ${q.options.map(opt => `<button type="button" class="option-btn" data-qid="${q.id}" data-val="${opt.value}">${opt.label}</button>`).join('')}
       </div>
       <p class="progress">${currentQuestion + 1} / ${questions.length}</p>
     </div>
   `
+  quiz.onclick = (e) => {
+    const btn = e.target.closest('.option-btn')
+    if (!btn) return
+    selectAnswer(btn.dataset.qid, btn.dataset.val)
+  }
 }
 
 function selectAnswer(id, val) {
@@ -705,8 +716,9 @@ function renderQuizResults(mods) {
   results.innerHTML = `
     <h2 class="section-title" style="margin-top:40px">Modpacks recommandés pour toi</h2>
     <div class="mods-grid"></div>
-    <button class="restart-btn" onclick="restart()">Recommencer le quiz</button>
+    <button type="button" class="restart-btn">Recommencer le quiz</button>
   `
+  results.querySelector('.restart-btn').addEventListener('click', restart)
 
   const grid = results.querySelector('.mods-grid')
   mods.forEach((mod, i) => {

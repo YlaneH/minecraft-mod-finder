@@ -16,6 +16,28 @@
 /* ── RESET ── */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Accessibilité : lien "aller au contenu" (clavier uniquement) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  width: auto;
+  height: auto;
+  z-index: 9999;
+  background: var(--bg-deep);
+  color: var(--text-bright);
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
 body {
   font-family: 'Crimson Text', Georgia, serif;
   background-color: var(--bg-void);
