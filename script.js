@@ -197,7 +197,7 @@ const guidesData = [
   {
     emoji: '⚔️',
     titre: 'Top 5 modpacks pour débuter en 2025',
-    resume: 'Si je devais en recommander 5 à quelqu'un qui veut juste démarrer sans se prendre la tête.',
+    resume: 'Si je devais en recommander 5 à quelqu\'un qui veut juste démarrer sans se prendre la tête.',
     contenu: `
       <h3>Top 5 modpacks pour débuter en 2025</h3>
       <p>Tu bloques parce que tu sais pas quoi prendre ? Voilà une sélection pensée pour démarrer proprement :</p>
