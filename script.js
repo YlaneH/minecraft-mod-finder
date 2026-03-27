@@ -7,6 +7,57 @@ let state = {
 let searchTimers = { modpack: null, mod: null }
 let modInTimer = null
 
+const humanCopy = {
+  loading: [
+    'Je prépare les résultats...',
+    'Je fouille Modrinth pour toi...',
+    'Deux secondes, je trie les meilleurs packs...',
+    'Chargement en cours, café virtuel offert...'
+  ],
+  searching: [
+    'Recherche en cours... je te trouve des pépites.',
+    'Je compare les packs qui collent à tes réponses...',
+    'Un instant, je fais le tri pour éviter les résultats inutiles.'
+  ],
+  error: [
+    'Petit souci de connexion. Réessaie dans quelques secondes.',
+    'La requête a raté, mais on peut retenter tout de suite.',
+    'Oups, je n\'arrive pas à récupérer les données pour le moment.'
+  ],
+  empty: [
+    'Aucun résultat exact pour l\'instant. On peut élargir un peu les filtres.',
+    'Rien de parfait trouvé avec ces critères. Essaie une version ou un loader différent.',
+    'Pas de match précis cette fois. Je te conseille d\'enlever un filtre.'
+  ]
+}
+
+function pickCopy(kind) {
+  const list = humanCopy[kind] || []
+  if (list.length === 0) return ''
+  return list[Math.floor(Math.random() * list.length)]
+}
+
+function setHumanIntro() {
+  const subtitle = document.getElementById('subtitle')
+  const note = document.getElementById('human-note')
+  const hour = new Date().getHours()
+
+  if (subtitle) {
+    if (hour < 12) subtitle.textContent = 'On se chauffe tranquillement: trouve un pack et lance ta session'
+    else if (hour < 19) subtitle.textContent = 'Tu veux jouer vite? Je te propose des packs adaptés à ton style'
+    else subtitle.textContent = 'Session du soir: on va te trouver un modpack qui vaut le détour'
+  }
+
+  if (note) {
+    const notes = [
+      'Fait par un joueur pour des joueurs. Pas de jargon, juste des bons packs.',
+      'Le but est simple: moins de scroll, plus de jeu.',
+      'Tu choisis ton style, je te sors des recommandations utiles.'
+    ]
+    note.textContent = notes[Math.floor(Math.random() * notes.length)]
+  }
+}
+
 function switchTab(tab) {
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('onclick') === `switchTab('${tab}')`)
@@ -80,7 +131,7 @@ const fallbackOrder = ['difficulty', 'players', 'loader', 'category', 'version']
 
 async function fetchResults(type, append = false) {
   const container = document.getElementById('results-' + type)
-  if (!append) container.innerHTML = '<p class="loading">Chargement...</p>'
+  if (!append) container.innerHTML = `<p class="loading">${pickCopy('loading')}</p>`
 
   try {
     const res = await fetch(buildUrl(type))
@@ -92,13 +143,13 @@ async function fetchResults(type, append = false) {
     }
     await fetchFallback(type, { ...state[type] }, fallbackOrder.slice(), container)
   } catch(e) {
-    container.innerHTML = '<p class="loading">Erreur de connexion.</p>'
+    container.innerHTML = `<p class="loading">${pickCopy('error')}</p>`
   }
 }
 
 async function fetchFallback(type, filters, remaining, container) {
   if (remaining.length === 0) {
-    container.innerHTML = '<p class="loading">Aucun résultat trouvé.</p>'
+    container.innerHTML = `<p class="loading">${pickCopy('empty')}</p>`
     return
   }
 
@@ -117,13 +168,13 @@ async function fetchFallback(type, filters, remaining, container) {
       await fetchFallback(type, newFilters, remaining, container)
     }
   } catch(e) {
-    container.innerHTML = '<p class="loading">Erreur de connexion.</p>'
+    container.innerHTML = `<p class="loading">${pickCopy('error')}</p>`
   }
 }
 
 async function loadTop10() {
   const grid = document.getElementById('top10-grid')
-  grid.innerHTML = '<p class="loading">Chargement...</p>'
+  grid.innerHTML = `<p class="loading">${pickCopy('loading')}</p>`
 
   try {
     const params = new URLSearchParams({
@@ -156,7 +207,7 @@ async function loadTop10() {
       grid.appendChild(card)
     })
   } catch(e) {
-    grid.innerHTML = '<p class="loading">Erreur de chargement.</p>'
+    grid.innerHTML = `<p class="loading">${pickCopy('error')}</p>`
   }
 }
 
@@ -485,7 +536,7 @@ async function openDetail(item, type) {
   content.innerHTML = `
     <div class="detail-inner">
       <button type="button" class="detail-back">← Retour</button>
-      <p class="loading">Chargement...</p>
+      <p class="loading">${pickCopy('loading')}</p>
     </div>
   `
   content.querySelector('.detail-back').addEventListener('click', closeDetail)
@@ -674,7 +725,7 @@ function selectAnswer(id, val) {
 
 async function searchModpacks() {
   document.getElementById('quiz').innerHTML = ''
-  document.getElementById('results').innerHTML = '<p class="loading">Recherche en cours...</p>'
+  document.getElementById('results').innerHTML = `<p class="loading">${pickCopy('searching')}</p>`
 
   const facets = [['project_type:modpack']]
   if (answers.players) facets.push(['categories:' + answers.players])
@@ -701,7 +752,7 @@ async function searchModpacks() {
       renderQuizResults(data2.hits)
     }
   } catch(e) {
-    document.getElementById('results').innerHTML = '<p class="loading">Erreur lors de la recherche.</p>'
+    document.getElementById('results').innerHTML = `<p class="loading">${pickCopy('error')}</p>`
   }
 }
 
@@ -709,7 +760,7 @@ function renderQuizResults(mods) {
   const results = document.getElementById('results')
 
   if (!mods || mods.length === 0) {
-    results.innerHTML = '<p class="loading">Aucun modpack trouvé. Réessaie.</p>'
+    results.innerHTML = `<p class="loading">${pickCopy('empty')}</p>`
     return
   }
 
@@ -750,5 +801,6 @@ function restart() {
   renderQuestion()
 }
 
+setHumanIntro()
 renderQuestion()
 checkUrlPartage()

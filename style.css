@@ -123,6 +123,17 @@ h1 {
   animation: fadeDown 0.8s 0.1s ease both;
 }
 
+.human-note {
+  font-family: 'Crimson Text', serif;
+  color: #9f937d;
+  font-size: 0.96rem;
+  letter-spacing: 0.01em;
+  max-width: 620px;
+  margin: 14px auto 0;
+  line-height: 1.5;
+  animation: fadeDown 0.8s 0.14s ease both;
+}
+
 .ornament {
   display: flex;
   align-items: center;
@@ -175,6 +186,16 @@ h1 {
   font-size: 1rem;
   text-align: center;
   margin-bottom: 28px;
+}
+
+.section-kicker {
+  font-family: 'Crimson Text', serif;
+  color: #b8ab90;
+  font-size: 0.94rem;
+  text-align: center;
+  margin: -14px auto 26px;
+  max-width: 520px;
+  letter-spacing: 0.01em;
 }
 
 /* ── TOP 10 ── */
@@ -493,6 +514,7 @@ h1 {
   margin-bottom: 10px;
   line-height: 1.5;
   display: -webkit-box;
+  line-clamp: 2;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
